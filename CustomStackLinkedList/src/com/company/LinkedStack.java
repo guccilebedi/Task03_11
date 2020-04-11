@@ -4,20 +4,17 @@ public class LinkedStack {
     private StackElement head;     // первый элемент списка
     private StackElement tail;     // последний элемент списка
 
-    public LinkedStack() {     // конструктор для списка
-        this.head = new StackElement(null, null);
-        this.tail = head;
-    }
+    public LinkedStack() { }
 
     public boolean isEmpty() {
-        return head.getData() == null;
+        return head == null;
     }
 
     public void push(String data) {
         StackElement temp = new StackElement(data, null);
         if (isEmpty()) {
-            head = temp;
-            tail = head;
+            this.head = temp;
+            this.tail = head;
         } else {
             temp.setNext(head);
             head = temp;
@@ -51,8 +48,8 @@ public class LinkedStack {
     }
 
     public void clear() {
-        head = new StackElement(null, null);
-        tail = head;
+        head = null;
+        tail = null;
     }
 }
 
